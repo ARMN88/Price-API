@@ -1,6 +1,6 @@
 const Scraper = require('./Scraper.js');
 
-const abdul = '7089206228@vtext.com';
+const abdul = 'xxxxxxxxxx@vtext.com';
 
 const scrapers = [
   new Scraper(

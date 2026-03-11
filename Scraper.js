@@ -22,8 +22,6 @@ class Scraper {
     this.container = container;
     this.selector = selector;
     this.price = Infinity;
-
-    this.scrape(true);
   }
 
   async scrape() {
