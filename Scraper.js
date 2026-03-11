@@ -22,6 +22,8 @@ class Scraper {
     this.container = container;
     this.selector = selector;
     this.price = Infinity;
+
+    this.scrape();
   }
 
   async scrape() {
@@ -39,14 +41,14 @@ class Scraper {
 
     console.log(newPrice);
 
-    // if (newPrice < this.price) {
+    if (newPrice < this.price) {
         await transporter.sendMail({
           from: `${this.name} Bot" <${process.env.EMAIL}>`,
           to: this.number,
           text: `${this.name} was $${this.price}, now $${newPrice}!\n`,
         });
       this.price = newPrice;
-    // }
+    }
   } 
 }
 
