@@ -1,6 +1,6 @@
 const Scraper = require('./Scraper.js');
 
-const abdul = 'xxxxxxxxxx@vtext.com';
+const abdul = '7089206228@vtext.com';
 
 const scrapers = [
   new Scraper(
@@ -12,10 +12,8 @@ const scrapers = [
   ),
 ];
 
-scrapers.forEach(async (scraper) => {
+const handle = setInterval(async () => {
+  scrapers.forEach(async (scraper) => {
     scraper.scrape();
   });
-
-// const handle = setInterval(async () => {
-  
-// }, 1000 * 60);
+}, 1000 * 60 * 60);
