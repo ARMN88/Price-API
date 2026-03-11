@@ -35,21 +35,20 @@ class Scraper {
 
     const price = container.find(this.selector);
 
-    console.log(price.text());
-
     const newPrice = parseFloat(
       price.text().replaceAll(",","").substring(1)
     );
+    console.log(newPrice);
 
-    if (newPrice < this.price) {
+/*    if (newPrice < this.price) {
         await transporter.sendMail({
           from: `${this.name} Bot" <${process.env.EMAIL}>`,
           to: this.number,
           text: `${this.name} was $${this.price}, now $${newPrice}!\n${this.url}`,
         });
       this.price = newPrice;
-    }
-  }
+    } */
+  } 
 }
 
 module.exports = Scraper;
