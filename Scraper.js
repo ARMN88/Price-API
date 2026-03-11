@@ -26,7 +26,7 @@ class Scraper {
     this.scrape(true);
   }
 
-  async scrape(isFirst = false) {
+  async scrape() {
     const { data } = await axios.get(this.url);
 
     const $ = cheerio.load(data);
