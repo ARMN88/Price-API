@@ -33,7 +33,9 @@ class Scraper {
 
     const container = $(this.container);
 
-    console.log(container.text());
+    const price = container.find(this.selector);
+
+    console.log(price.text());
 
     const newPrice = parseFloat(
       $(container).find(this.selector).text().substring(1)
