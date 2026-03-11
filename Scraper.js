@@ -39,6 +39,8 @@ class Scraper {
       price.text().replaceAll(",","").substring(1)
     );
 
+    console.log(newPrice);
+
     // if (newPrice < this.price) {
         await transporter.sendMail({
           from: `${this.name} Bot" <${process.env.EMAIL}>`,
