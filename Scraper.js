@@ -38,7 +38,7 @@ class Scraper {
     console.log(price.text());
 
     const newPrice = parseFloat(
-      price.text().substring(1)
+      price.text().replaceAll(",","").substring(1)
     );
 
     if (newPrice < this.price) {
