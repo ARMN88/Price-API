@@ -42,13 +42,11 @@ class Scraper {
     );
 
     if (newPrice < this.price) {
-      if (!isFirst) {
         await transporter.sendMail({
           from: `${this.name} Bot" <${process.env.EMAIL}>`,
           to: this.number,
           text: `${this.name} was $${this.price}, now $${newPrice}!\n${this.url}`,
         });
-      }
       this.price = newPrice;
     }
   }
