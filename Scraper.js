@@ -43,7 +43,7 @@ class Scraper {
         await transporter.sendMail({
           from: `${this.name} Bot" <${process.env.EMAIL}>`,
           to: this.number,
-          text: `${this.name} was $${this.price}, now $${newPrice}!\n${this.url}`,
+          text: `${this.name} was $${this.price}, now $${newPrice}!\n`,
         });
       this.price = newPrice;
     // }

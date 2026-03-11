@@ -13,7 +13,7 @@ const scrapers = [
 ];
 
 scrapers.forEach(async (scraper) => {
-    await scraper.scrape();
+    scraper.scrape();
   });
 
 // const handle = setInterval(async () => {
