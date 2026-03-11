@@ -38,19 +38,19 @@ class Scraper {
     console.log(price.text());
 
     const newPrice = parseFloat(
-      $(container).find(this.selector).text().substring(1)
+      price.text().substring(1)
     );
 
-    // // if (newPrice < this.price) {
-    //   // if (!isFirst) {
+    if (newPrice < this.price) {
+      if (!isFirst) {
         await transporter.sendMail({
           from: `${this.name} Bot" <${process.env.EMAIL}>`,
           to: this.number,
           text: `${this.name} was $${this.price}, now $${newPrice}!\n${this.url}`,
         });
-    //   // }
-    //   // this.price = newPrice;
-    // // }
+      }
+      this.price = newPrice;
+    }
   }
 }
 
