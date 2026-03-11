@@ -27,24 +27,23 @@ class Scraper {
   }
 
   async scrape(isFirst = false) {
-    console.log(this.url);
-    // const { data } = await axios.get(this.url);
+    const { data } = await axios.get(this.url);
 
-    // const $ = cheerio.load(data);
+    const $ = cheerio.load(data);
 
-    // const container = $(this.container);
+    const container = $(this.container);
 
-    // const newPrice = parseFloat(
-    //   $(container).find(this.selector).text().substring(1)
-    // );
+    const newPrice = parseFloat(
+      $(container).find(this.selector).text().substring(1)
+    );
 
     // // if (newPrice < this.price) {
     //   // if (!isFirst) {
-    //     await transporter.sendMail({
-    //       from: `${this.name} Bot" <${process.env.EMAIL}>`,
-    //       to: this.number,
-    //       text: `${this.name} was $${this.price}, now $${newPrice}!\n${this.url}`,
-    //     });
+        await transporter.sendMail({
+          from: `${this.name} Bot" <${process.env.EMAIL}>`,
+          to: this.number,
+          text: `${this.name} was $${this.price}, now $${newPrice}!\n${this.url}`,
+        });
     //   // }
     //   // this.price = newPrice;
     // // }
